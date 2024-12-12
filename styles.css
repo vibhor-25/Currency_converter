@@ -1,67 +1,76 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: rgb(232,232,231);
-    background: radial-gradient(circle, rgba(232,232,231,1) 0%, rgba(255,237,204,1) 100%);
-    background-image: url('https://images.pexels.com/photos/1629172/pexels-photo-1629172.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(232, 232, 231);
+  background-image: url("https://images.pexels.com/photos/1629172/pexels-photo-1629172.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-form{
-    margin: 2rem 0 1rem 0;
+form {
+  margin: 2rem 0 1rem 0;
 }
-form select,button,input{
+form select,
+button,
+input {
   width: 100%;
   border: none;
   outline: none;
   border-radius: 0.75rem;
 }
 
-body.dark form input:hover, body.dark form select:hover, body.dark form button:hover {
+body.dark form input:hover,
+body.dark form select:hover,
+body.dark form button:hover {
   outline: none;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
   transition: box-shadow 0.3s ease;
 }
 
-form input{
+form input {
   border: 1px solid lightgray;
   font-size: 1rem;
   height: 3rem;
   padding-left: 0.5rem;
 }
 
-form select:hover,button:hover,input:hover {
+form select:hover,
+button:hover,
+input:hover {
   outline: none;
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
   transition: box-shadow 0.3s ease;
 }
 
-.dropdown{
+.dropdown {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
 }
 
-.dropdown i{
+.dropdown i {
   font-size: 1.5rem;
   margin-top: 1rem;
 }
-
-.select-container img{
+.amt {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.select-container img {
   max-width: 2rem;
 }
 
-.select-container{
+.select-container {
   display: flex;
+  padding: 3px;
   justify-content: center;
   align-items: center;
   width: 6rem;
@@ -69,16 +78,23 @@ form select:hover,button:hover,input:hover {
   border: 1px solid lightgray;
 }
 
-.select-container select{
+.select-container select {
   font-size: 1rem;
   width: auto;
 }
 
-.msg{
-  margin: 2rem 0 2rem 0;
+.from p, .to p{
+  margin-bottom: 0.7rem;
+  font-size: 1.2rem;
+}
+.msg {
+  margin: 2rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-form button{
+form button {
   height: 3rem;
   background-color: #af4d98;
   color: #fff;
@@ -88,15 +104,19 @@ form button{
 
 body.dark {
   background: rgb(20, 20, 20);
-  background: radial-gradient(circle, rgba(20, 20, 20, 1) 0%, rgba(50, 50, 50, 1) 100%);
-  background-image: url('https://images.pexels.com/photos/1629172/pexels-photo-1629172.jpeg');
+  background: radial-gradient(
+    circle,
+    rgba(20, 20, 20, 1) 0%,
+    rgba(50, 50, 50, 1) 100%
+  );
+  background-image: url("https://images.pexels.com/photos/1629172/pexels-photo-1629172.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   color: white;
 }
 
-.container{
+.container {
   background-color: white;
   padding: 1.8rem;
   border-radius: 1rem;
@@ -104,8 +124,8 @@ body.dark {
   width: 40vh;
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2); 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: white;
   transition: background 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
@@ -127,7 +147,8 @@ body.dark .container:hover {
   border: 0.5px solid rgba(0, 255, 255, 0.5);
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.3);
   transform: scale(1.005);
-  transition: background 0.3s ease, box-shadow 0.5s ease, border 0.3s ease, transform 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.5s ease, border 0.3s ease,
+    transform 0.3s ease;
 }
 
 #theme-toggle {
