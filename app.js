@@ -1,9 +1,9 @@
-const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
-const dropdowns = document.querySelectorAll(".dropdown select");
-const btn = document.querySelector("form button");
-const fromCurr = document.querySelector(".from select");
-const toCurr = document.querySelector(".to select");
-const msg = document.querySelector(".msg");
+const BASE_URL="https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
+const dropdowns=document.querySelectorAll(".dropdown select");
+const btn=document.querySelector("form button");
+const fromCurr=document.querySelector(".from select");
+const toCurr=document.querySelector(".to select");
+const msg=document.querySelector(".msg");
 for(let select of dropdowns){
   for(currCode in countryList){
     let newOption = document.createElement("option");
@@ -24,13 +24,13 @@ for(let select of dropdowns){
 }
 
 const updateExchangeRate = async () => {
-  let amount = document.querySelector(".amount input");
-  let amtVal = amount.value;
-  if(amtVal === "" || amtVal < 0){
-    amtVal = 1;
-    amount.value = "1";
+  let amount=document.querySelector(".amount input");
+  let amtVal=amount.value;
+  if(amtVal==="" || amtVal<0){
+    amtVal=1;
+    amount.value="1";
   }
-  const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}.json`;
+  const URL=`${BASE_URL}/${fromCurr.value.toLowerCase()}.json`;
   let response = await fetch(URL);
   let data = await response.json();
   let rate = data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()]; 
@@ -53,4 +53,18 @@ btn.addEventListener("click", (evt) => {
 
 window.addEventListener("load", () => {
   updateExchangeRate();
+});
+
+const themeToggleBtn = document.getElementById("theme-toggle");
+const icon = themeToggleBtn.querySelector("i");
+themeToggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    if(document.body.classList.contains("dark")){
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-solid", "fa-sun");
+    } 
+    else{
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-solid", "fa-moon");
+    }
 });

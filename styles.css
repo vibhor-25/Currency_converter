@@ -9,14 +9,12 @@ body{
     min-height: 100vh;
     background: rgb(232,232,231);
     background: radial-gradient(circle, rgba(232,232,231,1) 0%, rgba(255,237,204,1) 100%);
+    background-image: url('https://images.pexels.com/photos/1629172/pexels-photo-1629172.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
-.container{
-    background-color: white;
-    padding: 1.8rem;
-    border-radius: 1rem;
-    min-height: 45vh;
-    width: 40vh;
-}
+
 form{
     margin: 2rem 0 1rem 0;
 }
@@ -27,11 +25,23 @@ form select,button,input{
   border-radius: 0.75rem;
 }
 
+body.dark form input:hover, body.dark form select:hover, body.dark form button:hover {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  transition: box-shadow 0.3s ease;
+}
+
 form input{
   border: 1px solid lightgray;
   font-size: 1rem;
   height: 3rem;
   padding-left: 0.5rem;
+}
+
+form select:hover,button:hover,input:hover {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  transition: box-shadow 0.3s ease;
 }
 
 .dropdown{
@@ -74,4 +84,72 @@ form button{
   color: #fff;
   font-size: 1.15rem;
   cursor: pointer;
+}
+
+body.dark {
+  background: rgb(20, 20, 20);
+  background: radial-gradient(circle, rgba(20, 20, 20, 1) 0%, rgba(50, 50, 50, 1) 100%);
+  background-image: url('https://images.pexels.com/photos/1629172/pexels-photo-1629172.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+
+.container{
+  background-color: white;
+  padding: 1.8rem;
+  border-radius: 1rem;
+  min-height: 45vh;
+  width: 40vh;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  color: white;
+  transition: background 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.container:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .container {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+body.dark .container:hover {
+  background: rgba(0, 0, 0, 0.75);
+  border: 0.5px solid rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: scale(1.005);
+  transition: background 0.3s ease, box-shadow 0.5s ease, border 0.3s ease, transform 0.3s ease;
+}
+
+#theme-toggle {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 4rem;
+  right: auto;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: #af4d98;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: #923d83;
+  transform: scale(1.1);
 }
